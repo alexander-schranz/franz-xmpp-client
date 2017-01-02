@@ -1,2 +1,3 @@
-# franz-xmpp-client
-XMPP Plugin for meetfranz.com
+# Franz XMPP Client
+
+This plugin is in development and not working currently.
