@@ -1,20 +1,26 @@
 {
-    "name": "xmpp",
-    "version": "1.0.0",
-    "description": "xmpp client",
-    "main": "index.js",
-    "author": "Alexander Schranz",
-    "license": "MIT",
-    "config": {
-        "serviceURL": "https://rawgit.com/alexander-schranz/franz-xmpp-client/master/index.html",
-        "serviceName": "XMPP Client",
-        "message": "A free and open-source XMPP chat client.",
-        "popup": [],
-        "hasNotificationSound": true,
-        "hasIndirectMessages": false,
-        "hasTeamID": false,
-        "customURL": false,
-        "hostedOnly": false,
-        "openDevTools": true
-    }
+  "name": "xmpp",
+  "version": "1.0.0",
+  "description": "xmpp client",
+  "main": "index.js",
+  "author": "Alexander Schranz",
+  "license": "MIT",
+  "config": {
+    "serviceURL": "https://rawgit.com/alexander-schranz/franz-xmpp-client/master/index.html",
+    "serviceName": "XMPP Client",
+    "message": "A free and open-source XMPP chat client.",
+    "popup": [],
+    "hasNotificationSound": true,
+    "hasIndirectMessages": false,
+    "hasTeamID": false,
+    "customURL": false,
+    "hostedOnly": false,
+    "webviewOptions": {
+      "disablewebsecurity": ""
+    },
+    "openDevTools": true
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
 }
