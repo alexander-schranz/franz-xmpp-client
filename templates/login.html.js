@@ -2,7 +2,7 @@ module.exports = `<div class="container">
     <div class="row main">
         <div class="panel-heading">
             <div class="panel-title text-center">
-                <h1 class="title">XMPP Client</h1>
+                <img width="100" src="icon.png" alt="XMPP Client" />
                 <hr />
             </div>
         </div>

@@ -1,5 +1,8 @@
 npm-debug.log
 
+# Ignore everything under node_modules
+node_modules/
+
 # .DS_Store
 .DS_Store
 
