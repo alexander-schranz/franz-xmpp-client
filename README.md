@@ -1,3 +1,3 @@
 # Franz XMPP Client
 
-This plugin is in development and not working currently.
+This plugin use currently https://conversejs.org and its server.
