@@ -1,3 +1,5 @@
+![XMPP](https://raw.githubusercontent.com/alexander-schranz/franz-xmpp-client/master/icon.png)
+
 # Franz XMPP Client
 
 This plugin use currently https://conversejs.org and its server.
