@@ -1,4 +1,6 @@
-![XMPP](https://raw.githubusercontent.com/alexander-schranz/franz-xmpp-client/master/icon.png)
+<p align="center">
+   <img src="https://raw.githubusercontent.com/alexander-schranz/franz-xmpp-client/master/icon.png" alt="XMPP Logo" />
+</p>
 
 # Franz XMPP Client
 
