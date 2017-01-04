@@ -5,12 +5,8 @@
   "main": "index.js",
   "author": "Alexander Schranz",
   "license": "MIT",
-  "scripts": {
-    "copy-jquery": "cp node_modules/dist/jquery.js vendor/js/jquery.js",
-    "copy-bootstrap": "cp node_modules/dist/jquery.js vendor/js/jquery.js",
-  },
   "config": {
-    "serviceURL": "https://rawgit.com/alexander-schranz/franz-xmpp-client/master/index.html",
+    "serviceURL": "https://conversejs.org",
     "serviceName": "XMPP Client",
     "message": "A free and open-source XMPP chat client.",
     "popup": [],

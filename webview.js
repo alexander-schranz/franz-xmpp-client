@@ -1,10 +1,11 @@
-const login = require('./components/login');
-const cssLoader = require('./components/css-loader');
-
 // xmpp integration
 module.exports = (Franz, options) => {
-    cssLoader.load('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
-    cssLoader.load('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    const getMessages = () => {
+        const directMessages = parseInt(document.querySelector('.unread-message-count').innerText, 10);
+        const indirectMessages = 0;
 
-    login.init(document.getElementById('main'));
+        Franz.setBadge(directMessages, indirectMessages);
+    }
+
+    Franz.loop(getMessages);
 }
