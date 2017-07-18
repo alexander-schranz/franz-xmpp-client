@@ -1,12 +1,12 @@
 {
   "name": "xmpp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "xmpp client",
   "main": "index.js",
   "author": "Alexander Schranz",
   "license": "MIT",
   "config": {
-    "serviceURL": "https://conversejs.org",
+    "serviceURL": "https://inverse.chat",
     "serviceName": "XMPP Client",
     "message": "A free and open-source XMPP chat client.",
     "popup": [],

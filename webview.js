@@ -1,8 +1,9 @@
 // xmpp integration
 module.exports = (Franz, options) => {
     const getMessages = () => {
-        const directMessages = parseInt(document.querySelector('.unread-message-count').innerText, 10);
-        const indirectMessages = 0;
+        let msgContainer = document.querySelector('.contacts-tab > .msgs-indicator');
+        let directMessages = msgContainer == null ? 0 : parseInt(msgContainer.innerText, 10);
+        let indirectMessages = 0;
 
         Franz.setBadge(directMessages, indirectMessages);
     }
