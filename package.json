@@ -1,23 +1,14 @@
 {
-  "name": "xmpp",
-  "version": "1.0.1",
-  "description": "xmpp client",
-  "main": "index.js",
-  "author": "Alexander Schranz",
-  "license": "MIT",
-  "config": {
-    "serviceURL": "https://inverse.chat",
-    "serviceName": "XMPP Client",
-    "message": "A free and open-source XMPP chat client.",
-    "popup": [],
-    "hasNotificationSound": true,
-    "hasIndirectMessages": false,
-    "hasTeamID": false,
-    "customURL": false,
-    "hostedOnly": false,
-    "webviewOptions": {
-      "disablewebsecurity": ""
-    },
-    "openDevTools": false
-  }
+    "id": "xmpp",
+    "name": "xmpp",
+    "version": "2.0.0",
+    "description": "xmpp client",
+    "main": "index.js",
+    "author": "Alexander Schranz",
+    "license": "MIT",
+    "repository": "https://github.com/alexander-schranz/franz-xmpp-client",
+    "config": {
+        "serviceURL": "https://inverse.chat",
+        "hasNotificationSound": true
+    }
 }
