@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Converse</title>
+    <link type="text/css" rel="stylesheet" media="screen" href="https://inverse.chat/css/fullpage.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="https://cdn.conversejs.org/4.0.2/css/converse.min.css" />
+    <script src="https://inverse.chat/3rdparty/libsignal-protocol.min.js"></script>
+    <script src="https://cdn.conversejs.org/4.0.2/dist/converse.min.js"></script>
+</head>
+<body>
+<script>
+    (function () {
+      let _converse
+
+      converse.plugins.add('franz', {
+        initialize () {
+          _converse = this._converse
+          let credentials
+
+          this._converse.api.listen.on('connectionInitialized', () => {
+            _converse.connection.connectOrig = _converse.connection.connect
+            _converse.connection.connect = function (jid, password, ...arguments) {
+              credentials = {jid, password}
+              _converse.connection.connectOrig(jid, password, ...arguments)
+            }
+          })
+
+          this._converse.api.listen.on('connected', () => {
+            if (!_converse.trusted || !credentials) {
+              localStorage.removeItem('franz-xmpp')
+              return
+            }
+
+            localStorage.setItem('franz-xmpp', btoa(JSON.stringify(credentials)))
+            credentials = undefined
+
+            // See https://github.com/electron/electron/issues/7150
+            // if (window.PasswordCredential && credentials.id && credentials.password) {
+            //  navigator.credentials.store(new PasswordCredential(credentials))
+            // }
+          })
+        }
+      })
+
+      const options = {
+        authentication: 'login',
+        auto_away: 300,
+        auto_reconnect: true,
+        bosh_service_url: 'https://conversejs.org/http-bind/', // Please use this connection manager only for testing purposes
+        message_archiving: 'always',
+        view_mode: 'fullscreen',
+        locales_url: 'https://inverse.chat/locale/{{{locale}}}/LC_MESSAGES/converse.json',
+        whitelisted_plugins: ['franz']
+      }
+
+      ;(function () {
+        const encryptedCredentials = localStorage.getItem('franz-xmpp')
+        if (!encryptedCredentials) {
+          return
+        }
+        let credentials
+
+        try {
+          credentials = JSON.parse(atob(encryptedCredentials))
+        } catch (e) {
+          console.error('Error decrypting the credentials', e)
+          localStorage.removeItem('franz-xmpp')
+          return
+        }
+
+        Object.assign(options, credentials)
+        options.auto_login = true
+      })()
+
+      converse.initialize(options)
+    })()
+</script>
+</body>
+</html>
