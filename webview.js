@@ -4,11 +4,9 @@ module.exports = (Franz) => {
     function getMessages() {
         let direct = 0;
         let indirect = 0;
-        const FranzData = document.querySelector("#FranzMessages").dataset;
-        if (FranzData) {
-            direct = FranzData.direct;
-            indirect = FranzData.indirect;
-        }
+        document.querySelectorAll('.msgs-indicator').forEach(indicator => {
+            direct += parseInt(indicator.innerText, 10)
+        })
 
         Franz.setBadge(direct, indirect);
     }
