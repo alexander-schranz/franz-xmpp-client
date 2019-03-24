@@ -4,7 +4,7 @@
 
 # Franz XMPP Client
 
-This plugin use currently https://conversejs.org and its server.
+This plugin currently uses https://inverse.chat as its server.
 
 ## Installation (Franz 5.x+)
 
